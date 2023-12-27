@@ -49,12 +49,13 @@ def build_index(data_path):
                             word_counts = defaultdict(int)
                             for token in tokens:
                                 if not (token in lexicon):
-                                    token_id += 1
                                     lexicon[token] = token_id
-                                word_counts[token_id] += 1
+                                    token_id += 1
+                                word_counts[token] += 1
 
                             # Update inverted index
-                            for token_id, freq in word_counts.items():
+                            for token, freq in word_counts.items():
+                                token_id = lexicon[token]
                                 inverted_index[str(token_id)].extend([internal_id, freq])
 
                             # Make folders if they do not exist
@@ -76,9 +77,11 @@ def build_index(data_path):
     # Save lexicon and inverted index
     with open(LEXICON_PATH, "w+") as f:
         json.dump(lexicon, f, indent=2)
+
     with open(INVERTED_LEXICON_PATH, "w+") as f:
         lexicon_inverted = {str(token_id): token for token, token_id in lexicon.items()}
         json.dump(lexicon_inverted, f, indent=2)
+
     with open(INVERTED_INDEX_PATH, 'w+') as f:
         json.dump(inverted_index, f, indent=2)
 

@@ -14,7 +14,7 @@ lexicon_file = os.path.join(INDEX_PATH, 'token_to_token_id.json')
 with open(lexicon_file, 'r') as file:
     lexicon = json.load(file)
 
-total_doc_length = 38975949
+total_doc_length = 39395100
 total_docs = 16230
 avdl = total_doc_length / total_docs
 
