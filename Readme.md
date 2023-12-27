@@ -23,7 +23,10 @@ Data: http://datasets.opentestset.com/datasets/enwiki_2011/download/enwiki_2012_
    ```bash
    git clone https://github.com/omkaark/search-engine-course.git
    ```
-2. Ensure Python (version 3.x) is installed on your system
+2. Ensure Python (version 3.x) is installed on your system and install requirements
+   ```bash
+   pip install -r requirements.txt
+   ```
 3. Navigate to the project directory:
    ```bash
    cd search-engine-course-project
