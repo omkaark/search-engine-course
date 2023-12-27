@@ -31,7 +31,7 @@ Data: http://datasets.opentestset.com/datasets/enwiki_2011/download/enwiki_2012_
    ```bash
    cd search-engine-course-project
    ```
-4. Place your data files (in .gz format) in a designated directory.
+4. Place your downloaded data file (in .gz format) in a designated directory.
 5. Run Index.py with the path to your data files:
 
    ```bash
@@ -54,3 +54,15 @@ Data: http://datasets.opentestset.com/datasets/enwiki_2011/download/enwiki_2012_
    ```
    python3 benchmark.py
    ```
+
+## Contributing
+
+Contributions to this project are welcome. Please follow the standard fork-and-pull request workflow.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgements
+
+This project is inspired by the teachings of Mark Smucker in MSCI 541 and content from the `Search Engines: Information Retrieval in Practice` Textbook
