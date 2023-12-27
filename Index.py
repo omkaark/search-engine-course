@@ -1,6 +1,5 @@
 from collections import defaultdict
 import json
-import struct
 import sys
 import os
 import tarfile
@@ -59,15 +58,12 @@ def build_index(data_path):
 
                             # Save metadata and document content
                             with open(metadata_file_path, 'w+') as mf:
-                                json.dump({'internal_id': internal_id, 'title': title, 'categories': categories, 'doc_length': len(tokens)}, mf, indent=2)
+                                json.dump({'internal_id': internal_id, 'title': title, 'categories': categories}, mf, indent=2)
                             with open(document_file_path, 'w+') as df:
                                 df.write(content)
 
                             file.close()
                             internal_id += 1
-
-    # Print statistics
-    print("Total doc length: {}, Total docs: {}, Average doc length: {}".format(total_doc_length, internal_id - 1, total_doc_length / (internal_id - 1)))
 
     # Save lexicon and inverted index
     with open(LEXICON_PATH, "w+") as f:

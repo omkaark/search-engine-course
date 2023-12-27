@@ -32,8 +32,6 @@ def boolean_and(text):
         # Intersect document IDs for subsequent tokens
         doc_ids = doc_ids.intersection(local_doc_ids)
 
-    print('doc_ids', len(doc_ids))
-
     # Sort and display the document IDs
     doc_ids = sorted(list(doc_ids))
     for i in range(min(len(doc_ids), 10)):
