@@ -57,6 +57,10 @@ def build_index(data_path):
                             for token_id, freq in word_counts.items():
                                 inverted_index[str(token_id)].extend([internal_id, freq])
 
+                            # Make folders if they do not exist
+                            os.makedirs(os.path.dirname(metadata_file_path), exist_ok=True)
+                            os.makedirs(os.path.dirname(document_file_path), exist_ok=True)
+
                             # Save metadata and document content
                             with open(metadata_file_path, 'w+') as mf:
                                 json.dump({'internal_id': internal_id, 'title': title, 'categories': categories, 'doc_length': len(tokens)}, mf, indent=2)
