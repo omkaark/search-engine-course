@@ -1,6 +1,9 @@
+# Import required modules
+import sys
 import time
-from RankedRetreival import rank_documents
+from RankedRetrieval import rank_documents
 
+# List of benchmark queries
 benchmark_queries = [
     "History of the Internet",
     "Climate change effects and solutions",
@@ -16,14 +19,21 @@ benchmark_queries = [
 
 def run_benchmarks():
     total_time = 0
+    
+    # Iterate through each query and calculate the time taken to rank documents
     for query in benchmark_queries:
         start_time = time.time()
-        rank_documents(query, optimized = False)
+        rank_documents(query, optimized=True)
         end_time = time.time()
+
         query_time = end_time - start_time
         total_time += query_time
+
         print(f"Time for '{query}': {query_time:.4f} seconds")
+
+    # Print the total time taken for all queries
     print(f"\nTotal time for all queries: {total_time:.4f} seconds")
 
+# Main entry point of the script
 if __name__ == "__main__":
     run_benchmarks()
